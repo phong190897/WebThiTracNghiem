@@ -109,6 +109,7 @@ namespace WebThiTracNghiem.Areas.Admin.Code
         public override bool ValidateUser(string username, string password)
         {
             TaiKhoanRepository taiKhoanControl = new TaiKhoanRepository();
+
             return taiKhoanControl.login(username, password);
         }
     }

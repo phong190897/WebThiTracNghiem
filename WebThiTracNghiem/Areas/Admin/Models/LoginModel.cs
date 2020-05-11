@@ -8,8 +8,9 @@ namespace WebThiTracNghiem.Areas.Admin.Models
 {
     public class LoginModel
     {
-        [Required]
+        [Required(ErrorMessage ="Mời Nhập Tài Khoản")]
         public string TenTaiKhoan { get; set; }
+        [Required(ErrorMessage = "Mời Nhập Mật Khẩu")]
         public string MatKhau { get; set; }
     }
 }

@@ -15,12 +15,23 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
     {
         public bool login(string userName, string password)
         {
-            var apiResponse = CoreRepo.GetApiResponse<TaiKhoan>(Constance.Constance.UrlApi, "TaiKhoan/GetTaiKhoanById/" + userName);
+            var apiResponse = CoreRepo.GetApiResponse<TaiKhoanModel>(Constance.Constance.UrlApi, "TaiKhoan/GetTaiKhoanById/" + userName);
 
             if (apiResponse.Status == (int)HttpStatusCode.NotFound)
                 return false;
 
             return true;
         }
+
+        public ApiResponse<TaiKhoanModel> getTaiKhoanInfo(string userName)
+        {
+            var apiResponse = CoreRepo.GetApiResponse<TaiKhoanModel>(Constance.Constance.UrlApi, "TaiKhoan/GetTaiKhoanById/" + userName);
+
+            if (apiResponse.Status == (int)HttpStatusCode.NotFound)
+                return apiResponse;
+
+            return apiResponse;
+        }
+            
     }
 }

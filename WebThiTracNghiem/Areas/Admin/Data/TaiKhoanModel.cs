@@ -14,8 +14,6 @@ namespace WebThiTracNghiem.Areas.Admin.Data
         public Nullable<bool> GioiTinh { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public string DiaChi { get; set; }
-        public string SDT { get; set; }
         public byte[] Anh { get; set; }
-        public List<int> MaBaiThi { get; set; }
     }
 }
