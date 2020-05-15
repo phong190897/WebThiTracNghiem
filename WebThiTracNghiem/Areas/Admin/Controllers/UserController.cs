@@ -19,6 +19,13 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult Create(TaiKhoanModel taiKhoanModel)
         {
             if(ModelState.IsValid)
