@@ -32,6 +32,18 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
 
             return apiResponse;
         }
+
+        public ApiResponse<TaiKhoanModel> InsertTaiKhoan(TaiKhoanModel taiKhoanModel)
+        {
+            string jsonObject = JsonConvert.SerializeObject(taiKhoanModel);
+
+            var apiResponse = CoreRepo.PostToGetApiResponse<TaiKhoanModel>(Constance.Constance.UrlApi, "TaiKhoan/InsertTaiKhoan/", jsonObject);
+
+            if (apiResponse.Status == (int)HttpStatusCode.NotFound)
+                return apiResponse;
+
+            return apiResponse;
+        }
             
     }
 }

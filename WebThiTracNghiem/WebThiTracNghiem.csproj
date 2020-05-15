@@ -128,10 +128,14 @@
     <Compile Include="Areas\Admin\Controllers\CauHoiController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuyenController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Data\CauHoiModel.cs" />
+    <Compile Include="Areas\Admin\Data\QuyenModel.cs" />
     <Compile Include="Areas\Admin\Data\TaiKhoanModel.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Areas\Admin\Utils\CauHoiRepository.cs" />
+    <Compile Include="Areas\Admin\Utils\QuyenRepository.cs" />
     <Compile Include="Areas\Admin\Utils\TaiKhoanRepository.cs" />
     <Compile Include="Constance\Constance.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -209,6 +213,7 @@
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CauHoi\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CauHoi\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -238,6 +243,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\Quyen\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
