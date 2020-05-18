@@ -28,8 +28,6 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
         // GET: Admin/CauHoi/Create
         public ActionResult Create()
         {
-
-
             return View();
         }
 
