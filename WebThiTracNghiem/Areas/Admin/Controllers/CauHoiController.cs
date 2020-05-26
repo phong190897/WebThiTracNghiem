@@ -8,6 +8,7 @@ using WebThiTracNghiem.Areas.Admin.Utils;
 
 namespace WebThiTracNghiem.Areas.Admin.Controllers
 {
+    [Authorize]
     public class CauHoiController : BaseController
     {
         CauHoiRepository cauHoiRepo = new CauHoiRepository();
@@ -28,7 +29,19 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
         // GET: Admin/CauHoi/Create
         public ActionResult Create()
         {
+            LoaiCauHoiRepository loaiCauHoiRepository = new LoaiCauHoiRepository();
+            MonRepository monRepository = new MonRepository();
+            List<LoaiCauHoiModel> listLoaiCauHoi = loaiCauHoiRepository.GetLoaiCauHoiToDropDownList();
+            List<MonModel> listMonThi = monRepository.GetMonThiToDropDownList();
 
+            if (listLoaiCauHoi.Count != 0)
+            {
+                ViewBag.LoaiCauHoi = listLoaiCauHoi;
+            }
+            if (listMonThi.Count != 0)
+            {
+                ViewBag.MonThi = listMonThi;
+            }
 
             return View();
         }
@@ -45,7 +58,7 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
                 {
                     var addNewCauHoi = cauHoiRepo.CreateCauHoi(collection);
                     if(addNewCauHoi.CheckStatus())
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Index", "CauHoi");
                 }
                 return View();
                 

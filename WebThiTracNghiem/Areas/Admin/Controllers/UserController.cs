@@ -22,6 +22,12 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            QuyenRepository quyenRepository = new QuyenRepository();
+            List<QuyenModel> listQuyen = quyenRepository.GetQuyenToDropDownList();
+            if(listQuyen.Count != 0)
+            {
+                ViewBag.Quyen = listQuyen;
+            }    
             return View();
         }
 

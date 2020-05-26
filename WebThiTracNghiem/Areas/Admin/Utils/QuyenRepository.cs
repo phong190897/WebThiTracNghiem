@@ -12,7 +12,7 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
     public class QuyenRepository
     {
 
-        public ApiResponse<QuyenModel> GetAllCauHoi()
+        public ApiResponse<QuyenModel> GetAllQuyen()
         {
             var list = CoreRepo.GetApiResponse<QuyenModel>(Constance.Constance.UrlApi, "Quyens/GetAllQuyen/");
 
@@ -20,6 +20,16 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
                 return list;
 
             return list;
+        }
+
+        public List<QuyenModel> GetQuyenToDropDownList()
+        {
+            var list = CoreRepo.GetApiResponse<QuyenModel>(Constance.Constance.UrlApi, "Quyens/GetAllQuyen/");
+
+            if (list.Status == (int)HttpStatusCode.NotFound)
+                return list.Data;
+
+            return list.Data;
         }
 
     }

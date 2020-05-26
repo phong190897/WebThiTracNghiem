@@ -13,7 +13,5 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
         {
             return View();
         }
-
-
     }
 }

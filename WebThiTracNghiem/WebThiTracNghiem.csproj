@@ -130,11 +130,17 @@
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\QuyenController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Data\BaiThiModel.cs" />
     <Compile Include="Areas\Admin\Data\CauHoiModel.cs" />
+    <Compile Include="Areas\Admin\Data\DeThiModel.cs" />
+    <Compile Include="Areas\Admin\Data\LoaiCauHoiModel.cs" />
+    <Compile Include="Areas\Admin\Data\MonModel.cs" />
     <Compile Include="Areas\Admin\Data\QuyenModel.cs" />
     <Compile Include="Areas\Admin\Data\TaiKhoanModel.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Areas\Admin\Utils\CauHoiRepository.cs" />
+    <Compile Include="Areas\Admin\Utils\LoaiCauHoiRepository.cs" />
+    <Compile Include="Areas\Admin\Utils\MonRepository.cs" />
     <Compile Include="Areas\Admin\Utils\QuyenRepository.cs" />
     <Compile Include="Areas\Admin\Utils\TaiKhoanRepository.cs" />
     <Compile Include="Constance\Constance.cs" />

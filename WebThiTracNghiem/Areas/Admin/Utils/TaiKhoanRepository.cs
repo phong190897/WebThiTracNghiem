@@ -15,7 +15,9 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
     {
         public bool login(string userName, string password)
         {
-            var apiResponse = CoreRepo.GetApiResponse<TaiKhoanModel>(Constance.Constance.UrlApi, "TaiKhoan/GetTaiKhoanById/" + userName);
+            string jsonObject = JsonConvert.SerializeObject("");
+
+            var apiResponse = CoreRepo.PostToGetApiResponse<TaiKhoanModel>(Constance.Constance.UrlApi, "TaiKhoan/Login?tk=" + userName+"&mk="+password, jsonObject);
 
             if (apiResponse.Status == (int)HttpStatusCode.NotFound)
                 return false;

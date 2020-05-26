@@ -10,7 +10,7 @@ namespace WebThiTracNghiem.Areas.Admin.Data
     {
         [Required(ErrorMessage ="Tài khoản không được để trống")]
         [Display(Name ="Tài Khoản")]
-        public string Taikhoan { get; set; }
+        public string TenTaiKhoan { get; set; }
 
         [Required(ErrorMessage = "Mật khẩu không được để trống")]
         [Display(Name = "Mật Khẩu")]
