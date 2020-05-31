@@ -151,7 +151,6 @@ D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\bin\System.Web.WebPa
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\bin\Newtonsoft.Json.xml
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\bin\Antlr3.Runtime.pdb
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csprojAssemblyReference.cache
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csproj.CopyComplete
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.dll
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.pdb
