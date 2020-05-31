@@ -35,5 +35,39 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
             return list;
         }
 
+        public ApiResponse<CauHoiModel> GetCauHoiByID(string ID)
+        {
+            var list = CoreRepo.GetApiResponse<CauHoiModel>(Constance.Constance.UrlApi, "CauHoi/GetCauHoiById/" + ID);
+
+            if (list.Status == (int)HttpStatusCode.NotFound)
+                return list;
+
+            return list;
+        }
+
+        public ApiResponse<CauHoiModel> UpdateCauHoi(CauHoiModel cauHoiModel)
+        {
+            string jsonObject = JsonConvert.SerializeObject(cauHoiModel);
+
+            var list = CoreRepo.PostToGetApiResponse<CauHoiModel>(Constance.Constance.UrlApi, "CauHoi/UpdateCauHoi/", jsonObject);
+
+            if (list.Status == (int)HttpStatusCode.NotFound)
+                return list;
+
+            return list;
+        }
+
+        public ApiResponse<CauHoiModel> DeleteCauHoi(string Id)
+        {
+            string jsonObject = JsonConvert.SerializeObject("");
+
+            var list = CoreRepo.DeleteToGetApiResponse<CauHoiModel>(Constance.Constance.UrlApi, "CauHoi/DeleteCauHoi/" + Id);
+
+            if (list.Status == (int)HttpStatusCode.NotFound)
+                return list;
+
+            return list;
+        }
+
     }
 }

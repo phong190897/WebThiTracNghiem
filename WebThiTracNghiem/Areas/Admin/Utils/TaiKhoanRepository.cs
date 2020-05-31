@@ -47,5 +47,38 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
             return apiResponse;
         }
             
+        public ApiResponse<TaiKhoanModel> GetAllTaiKhoan()
+        {
+            var apiResponse = CoreRepo.GetApiResponse<TaiKhoanModel>(Constance.Constance.UrlApi, "TaiKhoan/GetAllTaiKhoan/");
+
+            if (apiResponse.Status == (int)HttpStatusCode.NotFound)
+                return apiResponse;
+
+            return apiResponse;
+        }
+
+        public ApiResponse<TaiKhoanModel> UpdateTaiKhoan(TaiKhoanModel taiKhoanModel)
+        {
+            string jsonObject = JsonConvert.SerializeObject(taiKhoanModel);
+
+            var apiResponse = CoreRepo.PostToGetApiResponse<TaiKhoanModel>(Constance.Constance.UrlApi, "TaiKhoan/UpdateTaiKhoan/", jsonObject);
+
+            if (apiResponse.Status == (int)HttpStatusCode.NotFound)
+                return apiResponse;
+
+            return apiResponse;
+        }
+
+        public ApiResponse<TaiKhoanModel> DeleteTaiKhoan(string Id)
+        {
+            string jsonObject = JsonConvert.SerializeObject("");
+
+            var list = CoreRepo.DeleteToGetApiResponse<TaiKhoanModel>(Constance.Constance.UrlApi, "TaiKhoan/DeleteTaiKhoan/" + Id);
+
+            if (list.Status == (int)HttpStatusCode.NotFound)
+                return list;
+
+            return list;
+        }
     }
 }
