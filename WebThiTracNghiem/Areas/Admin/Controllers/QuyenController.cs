@@ -6,13 +6,14 @@ using System.Web.Mvc;
 
 namespace WebThiTracNghiem.Areas.Admin.Controllers
 {
-    [Authorize]
-    public class HomeController : BaseController
+    public class QuyenController : Controller
     {
-        // GET: Admin/Home
+        // GET: Admin/Quyen
         public ActionResult Index()
         {
             return View();
         }
+
+
     }
 }

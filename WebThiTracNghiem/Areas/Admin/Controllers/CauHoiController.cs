@@ -8,7 +8,7 @@ using WebThiTracNghiem.Areas.Admin.Utils;
 
 namespace WebThiTracNghiem.Areas.Admin.Controllers
 {
-    public class CauHoiController : Controller
+    public class CauHoiController : BaseController
     {
         CauHoiRepository cauHoiRepo = new CauHoiRepository();
         // GET: Admin/CauHoi

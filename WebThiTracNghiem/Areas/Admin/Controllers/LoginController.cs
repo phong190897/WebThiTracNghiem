@@ -5,8 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using WebThiTracNghiem.Areas.Admin.Code;
+using WebThiTracNghiem.Areas.Admin.Data;
 using WebThiTracNghiem.Areas.Admin.Models;
 using WebThiTracNghiem.Areas.Admin.Utils;
+using WebThiTracNghiem.Constance;
 
 namespace WebThiTracNghiem.Areas.Admin.Controllers
 {
@@ -26,11 +28,26 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
             if(Membership.ValidateUser(model.TenTaiKhoan, model.MatKhau) && ModelState.IsValid)
             {
                 FormsAuthentication.SetAuthCookie(model.TenTaiKhoan, true);
+                var taikhoanRepo = new TaiKhoanRepository();
+                var userInfo = taikhoanRepo.getTaiKhoanInfo(model.TenTaiKhoan);
+                var userSession = new UserSession();
+                userSession.UserName = userInfo.Data.Select(m => m.Taikhoan).FirstOrDefault();
+                userSession.Quyen = userInfo.Data.Select(m => m.MaQuyen).FirstOrDefault();
+                Session.Add(Constance.Constance.USER_SESSION, userSession);
                 return RedirectToAction("Index", "Home");
-            }    
+            }
             else
             {
                 ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng");
+                if (string.IsNullOrEmpty(model.TenTaiKhoan))
+                {
+                    ModelState.AddModelError("", "Tên đăng nhập không được để trống");
+                }
+
+                if(string.IsNullOrEmpty(model.MatKhau))
+                {
+                    ModelState.AddModelError("", "Mật khẩu không được để trống");
+                }
             }
             return View(model);
         }

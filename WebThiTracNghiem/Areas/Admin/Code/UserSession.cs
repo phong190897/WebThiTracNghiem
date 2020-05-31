@@ -9,5 +9,7 @@ namespace WebThiTracNghiem.Areas.Admin.Code
     public class UserSession
     {
         public string UserName { set; get; }
+
+        public string Quyen { get; set; }
     }
 }
