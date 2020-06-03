@@ -1,6 +1,6 @@
 ﻿@model WebThiTracNghiem.Areas.Admin.Data.QuyenModel
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,11 +10,11 @@
 
 <style>
     .form-group {
-        padding-bottom:25px !important;
+        padding-bottom: 25px !important;
     }
 
-    .control-label{
-        text-align:center
+    .control-label {
+        text-align: center
     }
 </style>
 
@@ -28,16 +28,17 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        @using (Html.BeginForm("Create", "Quyen", FormMethod.Post, new { id = "create-new-form", role = "form", enctype = "multipart/form-data" }))
+                        @using (Html.BeginForm("Edit", "Quyen", FormMethod.Post, new { id = "create-new-form", role = "form", enctype = "multipart/form-data" }))
                         {
                             @Html.AntiForgeryToken()
                             @Html.ValidationSummary(true)
-
+                            <input type="hidden" name="Id" value="@Model.MaQuyen" />
                             <div class="form-body">
                                 <div class="form-group form-md-line-input">
                                     <label class="col-md-2 control-label">Mã Quyền</label>
                                     <div class="col-md-10">
-                                        @Html.TextBoxFor(model => model.MaQuyen, new { htmlAttributes = new { @class = "form-control" } })
+                                        @*@Html.TextBoxFor(model => model.MaQuyen, new { htmlAttributes = new { @class = "form-control" } })*@
+                                        <input type="text" value="@Model.MaQuyen" readonly name="MaQuyen"/>
                                         @Html.ValidationMessageFor(model => model.MaQuyen, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -77,3 +78,5 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+
+

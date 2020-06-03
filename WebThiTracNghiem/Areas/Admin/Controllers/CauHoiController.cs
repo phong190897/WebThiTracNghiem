@@ -199,6 +199,7 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
 
         // POST: Admin/CauHoi/Delete/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(string id)
         {
             try

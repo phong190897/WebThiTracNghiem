@@ -78,11 +78,8 @@
                                         <a class="btn btn-info  btn-outline  btn-sm edit-label" id="edit-@item.MaQuyen" href="@Url.Action("Edit", "Quyen",new { id=item.MaQuyen})" @*onclick="onEdit('@item.Id')"*@>
                                             Edit
                                         </a>
-                                        <a class="btn btn-danger  btn-outline  btn-sm dele-label" id="dele-@item.MaQuyen" onclick="DeleteCauHoi('@item.MaQuyen')">
+                                        <a class="btn btn-danger  btn-outline  btn-sm dele-label" id="dele-@item.MaQuyen" onclick="DeleteQuyen('@item.MaQuyen')">
                                             Delete
-                                        </a>
-                                        <a class="btn btn-info  btn-outline  btn-sm edit-label" id="edit-@item.MaQuyen" href="@Url.Action("Details", "Quyen",new { id=item.MaQuyen})" @*onclick="onEdit('@item.Id')"*@>
-                                            Detail
                                         </a>
                                     </td>
                                 </tr>
@@ -101,7 +98,7 @@
 </div>
 
 <script>
-    function DeleteCauHoi(pid) {
+    function DeleteQuyen(pid) {
         bootbox.confirm("Do you want delete project ?", function (res) {
             debugger;
             if (res === true) {

@@ -59,7 +59,6 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
 
         public ApiResponse<CauHoiModel> DeleteCauHoi(string Id)
         {
-            string jsonObject = JsonConvert.SerializeObject("");
 
             var list = CoreRepo.DeleteToGetApiResponse<CauHoiModel>(Constance.Constance.UrlApi, "CauHoi/DeleteCauHoi/" + Id);
 

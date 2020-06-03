@@ -124,6 +124,7 @@
     <Compile Include="Areas\Admin\Code\CustomMembershipProvider.cs" />
     <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
     <Compile Include="Areas\Admin\Code\UserSession.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaiThiController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CauHoiController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
@@ -138,7 +139,9 @@
     <Compile Include="Areas\Admin\Data\QuyenModel.cs" />
     <Compile Include="Areas\Admin\Data\TaiKhoanModel.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Areas\Admin\Utils\BaiThiRepository.cs" />
     <Compile Include="Areas\Admin\Utils\CauHoiRepository.cs" />
+    <Compile Include="Areas\Admin\Utils\DeThiRepository.cs" />
     <Compile Include="Areas\Admin\Utils\LoaiCauHoiRepository.cs" />
     <Compile Include="Areas\Admin\Utils\MonRepository.cs" />
     <Compile Include="Areas\Admin\Utils\QuyenRepository.cs" />
@@ -227,6 +230,7 @@
     <Content Include="Areas\Admin\Views\User\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Quyen\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Quyen\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Quyen\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -255,6 +259,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\BaiThi\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Images\CauHoi\" />
   </ItemGroup>
