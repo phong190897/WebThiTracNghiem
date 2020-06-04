@@ -4,15 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebThiTracNghiem.Areas.Admin.Data;
+using WebThiTracNghiem.Areas.Admin.Utils;
 
 namespace WebThiTracNghiem.Areas.Admin.Controllers
 {
+    [Authorize]
     public class BaiThiController : BaseController
     {
+        BaiThiRepository _BaiThiRepo = new BaiThiRepository();
         // GET: Admin/BaiThi
         public ActionResult Index()
         {
-            return View();
+            var model = _BaiThiRepo.GetAllBaiThi();
+
+            return View(model);
         }
 
         // GET: Admin/BaiThi/Details/5

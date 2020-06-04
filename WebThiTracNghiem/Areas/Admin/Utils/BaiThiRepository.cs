@@ -12,7 +12,7 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
 {
     public class BaiThiRepository
     {
-        public ApiResponse<BaiThiModel> GetAllCauHoi()
+        public ApiResponse<BaiThiModel> GetAllBaiThi()
         {
             var list = CoreRepo.GetApiResponse<BaiThiModel>(Constance.Constance.UrlApi, "BaiThi/GetAllBaiThi/");
 
@@ -22,7 +22,7 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
             return list;
         }
 
-        public ApiResponse<BaiThiModel> CreateCauHoi(BaiThiModel baiThiModel)
+        public ApiResponse<BaiThiModel> CreateBaiThi(BaiThiModel baiThiModel)
         {
             string jsonObject = JsonConvert.SerializeObject(baiThiModel);
 
@@ -34,7 +34,7 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
             return list;
         }
 
-        public ApiResponse<BaiThiModel> GetCauHoiByID(string ID)
+        public ApiResponse<BaiThiModel> GetBaiThiByID(string ID)
         {
             var list = CoreRepo.GetApiResponse<BaiThiModel>(Constance.Constance.UrlApi, "BaiThi/GetBaiThiById/" + ID);
 
@@ -44,7 +44,7 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
             return list;
         }
 
-        public ApiResponse<BaiThiModel> UpdateCauHoi(BaiThiModel baiThiModel)
+        public ApiResponse<BaiThiModel> UpdateBaiThi(BaiThiModel baiThiModel)
         {
             string jsonObject = JsonConvert.SerializeObject(baiThiModel);
 
@@ -56,7 +56,7 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
             return list;
         }
 
-        public ApiResponse<BaiThiModel> DeleteCauHoi(string Id)
+        public ApiResponse<BaiThiModel> DeleteBaiThi(string Id)
         {
 
             var list = CoreRepo.DeleteToGetApiResponse<BaiThiModel>(Constance.Constance.UrlApi, "BaiThi/DeleteBaiThi/" + Id);

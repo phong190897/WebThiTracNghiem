@@ -1,12 +1,11 @@
-﻿@model WebThiTracNghiem.Areas.Admin.Data.CauHoiModel
-
+﻿@model WebThiTracNghiem.Areas.Admin.Data.LoaiCauHoiModel
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 @section header{
-    Thêm Mới Câu Hỏi
+    Thêm Mới Loại Câu Hỏi
 }
 
 <style>
@@ -16,35 +15,35 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Thông Tin Câu Hỏi
+                Thông Tin Loại Câu Hỏi
             </div>
 
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        @using (Html.BeginForm("Create", "CauHoi", FormMethod.Post, new { id = "create-new-form", role = "form", enctype = "multipart/form-data" }))
+                        @using (Html.BeginForm("Create", "LoaiCauHoi", FormMethod.Post, new { id = "create-new-form", role = "form", enctype = "multipart/form-data" }))
                         {
                             @Html.AntiForgeryToken()
                             @Html.ValidationSummary(true)
 
                             <div class="form-body">
                                 <div class="form-group form-md-line-input">
-                                    <label class="col-md-4 control-label">Mã Câu Hỏi</label>
-                                    <div class="col-md-8">
-                                        @Html.TextBoxFor(model => model.MaCauHoi, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.MaCauHoi, "", new { @class = "text-danger" })
+                                    <label class="col-md-4 control-label">Mã Loại Câu Hỏi</label>
+                                    <div class="col-md-8" style="margin-bottom:20px">
+                                        @Html.TextBoxFor(model => model.MaLoaiCauHoi, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.MaLoaiCauHoi, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
 
                                 <div class="form-group form-md-line-input">
-                                    <label class="col-md-4 control-label">Tên Câu Hỏi</label>
+                                    <label class="col-md-4 control-label">Tên Loại Câu Hỏi</label>
                                     <div class="col-md-8">
-                                        @Html.TextAreaFor(model => model.TenCauHoi, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.TenCauHoi, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.TenLoaiCauHoi, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.TenLoaiCauHoi, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
 
-                                <div class="form-group form-md-line-input">
+                                @*<div class="form-group form-md-line-input">
                                     <label class="col-md-4 control-label">Đáp Án A</label>
                                     <div class="col-md-8">
                                         @Html.TextAreaFor(model => model.A, new { htmlAttributes = new { @class = "form-control" } })
@@ -101,7 +100,7 @@
                                    new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.MaMon, "", new { @class = "text-danger" })
                                     </div>
-                                </div>
+                                </div>*@
 
                                 <div class="form-group form-md-line-input">
                                     <div class="col-md-offset-2 col-md-10">
@@ -143,3 +142,5 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+
+
