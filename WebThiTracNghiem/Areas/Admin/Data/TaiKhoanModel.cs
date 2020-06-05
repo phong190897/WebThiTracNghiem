@@ -10,7 +10,7 @@ namespace WebThiTracNghiem.Areas.Admin.Data
     {
         [Required(ErrorMessage ="Tài khoản không được để trống")]
         [Display(Name ="Tài Khoản")]
-        public string Taikhoan { get; set; }
+        public string TenTaiKhoan { get; set; }
 
         [Required(ErrorMessage = "Mật khẩu không được để trống")]
         [Display(Name = "Mật Khẩu")]
@@ -25,13 +25,16 @@ namespace WebThiTracNghiem.Areas.Admin.Data
         public bool GioiTinh { get; set; }
 
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Ngày Sinh")]
-        public System.DateTime NgaySinh { get; set; }
+        public DateTime NgaySinh { get; set; }
 
         [Display(Name = "Địa Chỉ")]
         public string DiaChi { get; set; }
 
         [Display(Name = "Ảnh")]
         public byte[] Anh { get; set; }
+
+        public string TenQuyen { get; set; }
     }
 }

@@ -81,5 +81,28 @@ namespace WebThiTracNghiem.Repository
 
             return jsonResult;
         }
+
+
+        public static ApiResponse<T> DeleteToGetApiResponse<T>(string uri, string api)
+        {
+            var res = _DeleteToGetApiResponse<T>(uri, api);
+            return res;
+        }
+
+        private static ApiResponse<T> _DeleteToGetApiResponse<T>(string uri, string api)
+        {
+            System.Net.ServicePointManager.Expect100Continue = false;
+
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+
+
+            HttpResponseMessage respone = client.DeleteAsync(api).Result;
+            var json = respone.Content.ReadAsStringAsync();
+
+            ApiResponse<T> jsonResult = JsonConvert.DeserializeObject<ApiResponse<T>>(json.Result);
+
+            return jsonResult;
+        }    
     }
 }

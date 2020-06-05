@@ -41,5 +41,9 @@ namespace WebThiTracNghiem.Areas.Admin.Data
         [DisplayName("Mã Môn Học")]
         public string MaMon { get; set; }
 
+        public string TenLoaiCauHoi { get; set; }
+
+        public string TenMonHoc { get; set; }
+
     }
 }

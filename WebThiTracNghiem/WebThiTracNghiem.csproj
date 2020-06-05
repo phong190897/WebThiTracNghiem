@@ -130,11 +130,17 @@
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\QuyenController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Data\BaiThiModel.cs" />
     <Compile Include="Areas\Admin\Data\CauHoiModel.cs" />
+    <Compile Include="Areas\Admin\Data\DeThiModel.cs" />
+    <Compile Include="Areas\Admin\Data\LoaiCauHoiModel.cs" />
+    <Compile Include="Areas\Admin\Data\MonModel.cs" />
     <Compile Include="Areas\Admin\Data\QuyenModel.cs" />
     <Compile Include="Areas\Admin\Data\TaiKhoanModel.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Areas\Admin\Utils\CauHoiRepository.cs" />
+    <Compile Include="Areas\Admin\Utils\LoaiCauHoiRepository.cs" />
+    <Compile Include="Areas\Admin\Utils\MonRepository.cs" />
     <Compile Include="Areas\Admin\Utils\QuyenRepository.cs" />
     <Compile Include="Areas\Admin\Utils\TaiKhoanRepository.cs" />
     <Compile Include="Constance\Constance.cs" />
@@ -212,9 +218,15 @@
     <Content Include="Areas\Admin\Views\Shared\_LeftMenu.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CauHoi\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\CauHoi\Create.cshtml" />
     <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <Content Include="Areas\Admin\Views\User\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CauHoi\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CauHoi\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CauHoi\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Quyen\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Quyen\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -244,7 +256,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Areas\Admin\Views\Quyen\" />
+    <Folder Include="Images\CauHoi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

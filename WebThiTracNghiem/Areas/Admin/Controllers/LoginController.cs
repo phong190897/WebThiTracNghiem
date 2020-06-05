@@ -24,14 +24,13 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(LoginModel model)
         {
-
             if(Membership.ValidateUser(model.TenTaiKhoan, model.MatKhau) && ModelState.IsValid)
             {
                 FormsAuthentication.SetAuthCookie(model.TenTaiKhoan, true);
                 var taikhoanRepo = new TaiKhoanRepository();
                 var userInfo = taikhoanRepo.getTaiKhoanInfo(model.TenTaiKhoan);
                 var userSession = new UserSession();
-                userSession.UserName = userInfo.Data.Select(m => m.Taikhoan).FirstOrDefault();
+                userSession.UserName = model.TenTaiKhoan;
                 userSession.Quyen = userInfo.Data.Select(m => m.MaQuyen).FirstOrDefault();
                 Session.Add(Constance.Constance.USER_SESSION, userSession);
                 return RedirectToAction("Index", "Home");
