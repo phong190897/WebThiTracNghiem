@@ -9,43 +9,42 @@ using WebThiTracNghiem.Areas.Admin.Utils;
 namespace WebThiTracNghiem.Areas.Admin.Controllers
 {
     [Authorize]
-    public class QuyenController : BaseController
+    public class MonThiController : BaseController
     {
-        QuyenRepository _quyenRepo = new QuyenRepository();
+        MonRepository _monRepo = new MonRepository();
 
-        // GET: Admin/Quyen
+        // GET: Admin/MonThi
         public ActionResult Index()
         {
-            var model = _quyenRepo.GetAllQuyen();
-
-            return View(model.Data);
+            var model = _monRepo.GetMonThiToDropDownList();
+            return View(model);
         }
 
+
+        // GET: Admin/MonThi/Create
         public ActionResult Create()
         {
             return View();
         }
 
+        // POST: Admin/MonThi/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(QuyenModel quyenModel)
+        public ActionResult Create(MonModel mon)
         {
-
             try
             {
-                // TODO: Add insert logic here
-                if (ModelState.IsValid)
+                if(ModelState.IsValid)
                 {
-                    var result = _quyenRepo.CreateQuyen(quyenModel);
-                    if (result.CheckStatus())
-                        return RedirectToAction("Index", "Quyen");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Add Failed");
-                }    
-                return View();
+                    var result = _monRepo.CreateMonThi(mon);
 
+                    if(result.CheckStatus())
+                    {
+                        return RedirectToAction("Index");
+                    }    
+                }    
+                // TODO: Add insert logic here
+
+                return View();
             }
             catch
             {
@@ -53,30 +52,31 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
             }
         }
 
+        // GET: Admin/MonThi/Edit/5
         public ActionResult Edit(string id)
         {
-            var model = _quyenRepo.GetQuyenById(id);
+            var model = _monRepo.GetMonThiById(id);
 
             return View(model.Data.FirstOrDefault());
         }
 
+        // POST: Admin/MonThi/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(QuyenModel quyenModel)
+        public ActionResult Edit(MonModel mon)
         {
             try
             {
-                // TODO: Add update logic here
-                var model = _quyenRepo.UpdateQuyen(quyenModel);
+                if (ModelState.IsValid)
+                {
+                    var result = _monRepo.UpdateMonThi(mon);
 
-                if(model.CheckStatus())
-                {
-                    return RedirectToAction("Index");
+                    if (result.CheckStatus())
+                    {
+                        return RedirectToAction("Index");
+                    }
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Update Failed");
-                }
+                // TODO: Add insert logic here
+
                 return View();
             }
             catch
@@ -85,6 +85,7 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
             }
         }
 
+        // POST: Admin/MonThi/Delete/5
         [HttpPost]
         public ActionResult Delete(string id)
         {
@@ -92,11 +93,12 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
             {
                 bool isDeleted = false;
                 // TODO: Add delete logic here
-                var model = _quyenRepo.DeleteQuyen(id);
+                var model = _monRepo.DeleteMonThi(id);
                 if (model.CheckStatus())
                 {
                     isDeleted = true;
                 }
+
 
                 return Json(isDeleted);
             }
@@ -105,6 +107,5 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
                 return View();
             }
         }
-
     }
 }

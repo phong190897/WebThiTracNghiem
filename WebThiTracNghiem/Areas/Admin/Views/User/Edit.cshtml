@@ -21,11 +21,11 @@
                         @Html.AntiForgeryToken()
                         @Html.ValidationSummary(true)
 
-                        @*<div class="form-group">
-                @Html.LabelFor(model => model.TenTaiKhoan, htmlAttributes: new { @class = "control-label col-md-4" })
-                @Html.TextBoxFor(model => model.TenTaiKhoan, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TenTaiKhoan, "", new { @class = "text-danger" })
-            </div>*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.TenTaiKhoan, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <input type="text" name="TenTaiKhoan" value="@Model.TenTaiKhoan" readonly/>
+                            @Html.ValidationMessageFor(model => model.TenTaiKhoan, "", new { @class = "text-danger" })
+                        </div>
                         <input type="hidden" name="TenTaiKhoan" value="@Model.TenTaiKhoan" />
                         <div class="form-body">
                             <div class="form-group">

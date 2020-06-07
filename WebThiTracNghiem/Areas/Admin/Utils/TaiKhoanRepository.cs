@@ -71,8 +71,6 @@ namespace WebThiTracNghiem.Areas.Admin.Utils
 
         public ApiResponse<TaiKhoanModel> DeleteTaiKhoan(string Id)
         {
-            string jsonObject = JsonConvert.SerializeObject("");
-
             var list = CoreRepo.DeleteToGetApiResponse<TaiKhoanModel>(Constance.Constance.UrlApi, "TaiKhoan/DeleteTaiKhoan/" + Id);
 
             if (list.Status == (int)HttpStatusCode.NotFound)
