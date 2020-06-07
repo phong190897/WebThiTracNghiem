@@ -76,4 +76,3 @@ D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.
 D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csproj.CopyComplete
 D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.dll
 D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.pdb
-D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csprojAssemblyReference.cache
