@@ -8,6 +8,13 @@
     Sửa Câu Hỏi
 }
 
+<style>
+    .col-md-8 {
+        padding-bottom: 10px;
+    }
+</style>
+
+
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
@@ -27,7 +34,7 @@
                                 <div class="form-group form-md-line-input">
                                     <label class="col-md-4 control-label">Mã Câu Hỏi</label>
                                     <div class="col-md-8">
-                                        <input type="text" id="MaCauHoi" name="MaCauHoi" readonly/>
+                                        <input type="text" id="MaCauHoi" name="MaCauHoi" readonly value="@Model.MaCauHoi" />
                                         @Html.ValidationMessageFor(model => model.MaCauHoi, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -106,26 +113,26 @@
                                 </div>
 
                                 @*<div class="form-group form-md-line-input">
-                                        <label class="col-md-3 control-label">Tên Môn</label>
+                                                            <label class="col-md-3 control-label">Tên Môn</label>
+                                                            <div class="col-md-9">
+                                                                @Html.DropDownList("TenMon", new SelectList(ViewBag.MonThi, "MaMon", "TenMon"), "Please Select",
+                                                           new { htmlAttributes = new { @class = "form-control" } })
+                                                                @Html.ValidationMessageFor(model => model.MaMon, "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group form-md-line-input">
+                                        <label class="col-md-3 control-label" for="customername">Images</label>
                                         <div class="col-md-9">
-                                            @Html.DropDownList("TenMon", new SelectList(ViewBag.MonThi, "MaMon", "TenMon"), "Please Select",
-                                       new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.MaMon, "", new { @class = "text-danger" })
+                                            <input type="file" name="ImageUpload" />
                                         </div>
                                     </div>
 
                                     <div class="form-group form-md-line-input">
-                    <label class="col-md-3 control-label" for="customername">Images</label>
-                    <div class="col-md-9">
-                        <input type="file" name="ImageUpload" />
-                    </div>
-                </div>
-
-                <div class="form-group form-md-line-input">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="button" value="Lưu" class="btn btn-default" />
-                    </div>
-                </div>*@
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="button" value="Lưu" class="btn btn-default" />
+                                        </div>
+                                    </div>*@
                             </div>
                         }
                         <div>
