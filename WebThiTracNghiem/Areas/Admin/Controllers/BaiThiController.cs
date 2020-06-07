@@ -17,11 +17,11 @@ namespace WebThiTracNghiem.Areas.Admin.Controllers
         {
             var model = _BaiThiRepo.GetAllBaiThi();
 
-            return View(model);
+            return View(model.Data);
         }
 
         // GET: Admin/BaiThi/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
             return View();
         }
