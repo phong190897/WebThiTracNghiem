@@ -72,7 +72,6 @@ D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\bin\System.Web.WebPages.Raz
 D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\bin\Newtonsoft.Json.xml
 D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\bin\Antlr3.Runtime.pdb
 D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csprojAssemblyReference.cache
 D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csproj.CoreCompileInputs.cache
 D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csproj.CopyComplete
 D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.dll
@@ -154,4 +153,3 @@ D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\bin\Microsoft.CodeDo
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csproj.CopyComplete
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.dll
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.pdb
-D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csprojAssemblyReference.cache
