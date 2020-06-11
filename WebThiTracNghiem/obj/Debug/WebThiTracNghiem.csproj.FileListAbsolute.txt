@@ -153,3 +153,4 @@ D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\bin\Microsoft.CodeDo
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csproj.CopyComplete
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.dll
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.pdb
+D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csprojAssemblyReference.cache
