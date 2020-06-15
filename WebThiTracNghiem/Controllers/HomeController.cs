@@ -14,6 +14,8 @@ namespace WebThiTracNghiem.Controllers
     public class HomeController : BaseController
     {
         MonRepository _monThiRepo = new MonRepository();
+        DeThiRepository _deThiRepo = new DeThiRepository();
+        CauHoiRepository _cauHoiRepo = new CauHoiRepository();
 
         public ActionResult Index()
         {
@@ -40,11 +42,65 @@ namespace WebThiTracNghiem.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult ThongTinBaiThi(FormCollection MaMon)
         {
-            ViewBag.Message = "Your contact page.";
+            string mon = MaMon["MaMon"];
+
+            if (!string.IsNullOrEmpty(mon))
+            {
+                var DeThi = _deThiRepo.GetAllDeThi().Data.Where(m => m.MaMon == mon).ToList();
+                var tenMonThi = _monThiRepo.GetMonThiById(mon).Data.FirstOrDefault();
+
+                ViewBag.MonThi = tenMonThi.TenMon;
+
+                return View(DeThi);
+            }
+
 
             return View();
+        }
+
+        public ActionResult LamBaiThi(string ID)
+        {
+            var model = _deThiRepo.GetDeThiByID(ID);
+            ViewBag.MonThi = _monThiRepo.GetMonThiById(model.Data.FirstOrDefault().MaMon).Data.FirstOrDefault().TenMon;
+
+            return View(model.Data.FirstOrDefault());
+        }
+
+        public ActionResult BatDau(string ID)
+        {
+            var model = _deThiRepo.GetDeThiByID(ID).Data.FirstOrDefault();
+            List<CauHoiModel> ListCauHoi = new List<CauHoiModel>();
+            int i = 1;
+
+            ViewBag.Time = model.ThoiGianLamBai;
+
+            if (!string.IsNullOrEmpty(model.Cauhoi))
+            {
+                var listMaCauHoi = model.Cauhoi.Split(',');
+
+                foreach (var item in listMaCauHoi)
+                {
+                    if (!string.IsNullOrEmpty(item))
+                    {
+                        var cauHoi = _cauHoiRepo.GetCauHoiByID(item).Data.FirstOrDefault();
+                        ListCauHoi.Add(new CauHoiModel
+                        {
+                            MaCauHoi = cauHoi.MaCauHoi,
+                            TenCauHoi = i + "/ " + cauHoi.TenCauHoi,
+                            A = cauHoi.A,
+                            B = cauHoi.B,
+                            C = cauHoi.C,
+                            D = cauHoi.D,
+                            DapAn = cauHoi.DapAn
+                        });
+                        i++;
+                    }
+                }
+            }
+
+            return View(ListCauHoi);
         }
     }
 }

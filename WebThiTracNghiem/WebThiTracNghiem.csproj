@@ -273,6 +273,10 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\User\Detail.cshtml" />
     <Content Include="Views\Home\ThiThu.cshtml" />
+    <Content Include="Views\Home\ThongTinBaiThi.cshtml" />
+    <Content Include="Views\Shared\_BaiThiLayout.cshtml" />
+    <Content Include="Views\Home\LamBaiThi.cshtml" />
+    <Content Include="Views\Home\BatDau.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
