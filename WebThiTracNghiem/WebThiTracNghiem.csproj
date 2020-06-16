@@ -137,6 +137,7 @@
     <Compile Include="Areas\Admin\Data\BaiThiModel.cs" />
     <Compile Include="Areas\Admin\Data\CauHoiModel.cs" />
     <Compile Include="Areas\Admin\Data\DeThiModel.cs" />
+    <Compile Include="Areas\Admin\Data\KetQuaBaiThiModel.cs" />
     <Compile Include="Areas\Admin\Data\LoaiCauHoiModel.cs" />
     <Compile Include="Areas\Admin\Data\MonModel.cs" />
     <Compile Include="Areas\Admin\Data\QuyenModel.cs" />
@@ -277,6 +278,7 @@
     <Content Include="Views\Shared\_BaiThiLayout.cshtml" />
     <Content Include="Views\Home\LamBaiThi.cshtml" />
     <Content Include="Views\Home\BatDau.cshtml" />
+    <Content Include="Views\Home\NopBai.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

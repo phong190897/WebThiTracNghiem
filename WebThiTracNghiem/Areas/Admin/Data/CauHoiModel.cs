@@ -45,5 +45,7 @@ namespace WebThiTracNghiem.Areas.Admin.Data
 
         public string TenMonHoc { get; set; }
 
+        public string DapAnChu { get; set; }
+
     }
 }
