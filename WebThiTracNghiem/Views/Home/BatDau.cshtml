@@ -5,18 +5,57 @@
 }
 
 @section header{
-    Bài Thi
+}
+
+@section leftMenu{
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li>
+                    <a href="@Url.Action("ThiThu","Home")"><i class="fa fa-book fa-fw"></i> Thi Thử</a>
+                </li>
+                <li>
+                    <p id="timer"></p>
+                </li>
+            </ul>
+        </div>
+    </div>
 }
 
 <style>
     p {
         text-align: center;
-        font-size: 60px;
+        font-size: 30px;
         margin-top: 0px;
+    }
+
+    .row{
+        padding-bottom:10px;
+        padding-top:10px;
     }
 </style>
 
-<p id="timer"></p>
+
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="row">
+            <input hidden id="@item.MaCauHoi" name="@item.MaCauHoi" />
+            @item.TenCauHoi
+        </div>
+        <div class="row">
+            <div class="col-md-6"><input type="radio" value="@item.A" /><strong style="padding-left:3px;">A/</strong> @item.A</div>
+            <div class="col-md-6"><input type="radio" value="@item.B" /><strong style="padding-left:3px;">B/</strong> @item.B</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><input type="radio" value="@item.C" /><strong style="padding-left:3px;">C/</strong> @item.C</div>
+            <div class="col-md-6"><input type="radio" value="@item.D" /><strong style="padding-left:3px;">D/</strong> @item.D</div>
+        </div>
+    </div>
+}
+
+<input style="text-align:center" type="button" value="Submit"/>
+
 
 <script>
     // Set the date we're counting down to
@@ -33,14 +72,14 @@
         var distance = countDownDate - now;
 
         // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        //var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Output the result in an element with id="timer"
-        document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
+        document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
+        //days + "d " + hours + "h +"
 
         // If the count down is over, write some text
         if (distance < 0) {
