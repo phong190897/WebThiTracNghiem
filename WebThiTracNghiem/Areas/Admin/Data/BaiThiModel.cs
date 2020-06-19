@@ -15,5 +15,8 @@ namespace WebThiTracNghiem.Areas.Admin.Data
         public int Diem { get; set; }
         public string CauTraLoi { get; set; }
         public System.DateTime NgayThi { get; set; }
+
+        public int TongSoCau { get; set; }
+        public double Diem10 { get; set; }
     }
 }

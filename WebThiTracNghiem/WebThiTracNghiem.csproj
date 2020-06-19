@@ -279,6 +279,7 @@
     <Content Include="Views\Home\LamBaiThi.cshtml" />
     <Content Include="Views\Home\BatDau.cshtml" />
     <Content Include="Views\Home\NopBai.cshtml" />
+    <Content Include="Views\Home\BaiThi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

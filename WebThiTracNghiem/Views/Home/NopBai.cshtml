@@ -58,7 +58,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                @if (item.DapAnChu == "A")
+                @if (item.DapAnChu.Contains("A"))
                 {
                     <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.A" id="A_@item.MaCauHoi" />
                 }
@@ -70,7 +70,7 @@
 
             </div>
             <div class="col-md-6">
-                @if (item.DapAnChu == "B")
+                @if (item.DapAnChu.Contains("B"))
                 {
                     <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.B" id="B_@item.MaCauHoi" />
                 }
@@ -83,7 +83,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                @if (item.DapAnChu == "C")
+                @if (item.DapAnChu.Contains("C"))
                 {
                     <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.C" id="C_@item.MaCauHoi" />
                 }
@@ -94,7 +94,7 @@
                 <label for="C_@item.MaCauHoi"><strong style="padding-left:3px;">C/</strong> @item.C</label>
             </div>
             <div class="col-md-6">
-                @if (item.DapAnChu == "D")
+                @if (item.DapAnChu.Contains("D"))
                 {
                     <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.D" id="D_@item.MaCauHoi" />
                 }
@@ -122,9 +122,7 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-
-    });
+    
 </script>
 
 
