@@ -1,55 +1,24 @@
-﻿@model WebThiTracNghiem.Areas.Admin.Data.KetQuaBaiThiModel
+﻿@model WebThiTracNghiem.Areas.Admin.Data.DetailsBaiThiViewModel
 @{
-    ViewBag.Title = "NopBai";
+    ViewBag.Title = "ChiTietBaiThi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section header{}
+@section header{
+    Chi Tiết Bài Thi
+}
 
 @{
     int i = 1;
-    double diem = Math.Round(((double)Model.Diem / (double)Model.TongSoCau) * 10, 1, MidpointRounding.AwayFromZero);
 }
 
-
-<style>
-    h2 {
-        text-align: center
-    }
-
-    .container {
-        text-align: center;
-        font-size: 15px;
-        margin-bottom: 20px;
-    }
-
-    fieldset {
-        border: 1px solid #ddd !important;
-        text-align: center;
-    }
-
-    .row {
-        padding-bottom: 10px;
-        padding-top: 10px;
-    }
-
-    label {
-        font-weight: 100;
-    }
-</style>
-
-<div class="container">
-    <fieldset>
-        <legend style="font-size:50px">Kết Quả</legend>
-        <h2>@ViewBag.MonThi</h2>
-        <div>
-            <p>Mã Đề: @Model.MaDe</p>
-            <p>Thời gian làm bài: @Model.ThoiGianLamBai Phút</p>
-            <p>Số Câu Đúng: @Model.SoCauDung / @Model.TongSoCau Câu</p>
-            <p>Điểm: @diem / 10</p>
-        </div>
-    </fieldset>
+<div class="container" style="text-align:center">
+    <p>Mã Đề: @Model.BaiThi.MaDe</p>
+    <p>Thời Gian Làm Bài: @Model.BaiThi.ThoiGianHoanThanh Phút</p>
+    <p>Số Câu Đúng: @Model.BaiThi.SoCauDung / @Model.DeThi.TongCauHoi</p>
+    <p>Điểm : @Model.BaiThi.Diem10</p>
 </div>
+
 @foreach (var item in Model.CauHois)
 {
     <div class="containerCustom">
@@ -58,9 +27,12 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                @if (item.DapAnChu.Contains("A"))
+                @if (!string.IsNullOrEmpty(item.DapAnChu))
                 {
-                    <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.A" id="A_@item.MaCauHoi" />
+                    if (item.DapAnChu.Contains("A"))
+                    {
+                        <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.A" id="A_@item.MaCauHoi" />
+                    }
                 }
                 else
                 {
@@ -70,9 +42,12 @@
 
             </div>
             <div class="col-md-6">
-                @if (item.DapAnChu.Contains("B"))
+                @if (!string.IsNullOrEmpty(item.DapAnChu))
                 {
-                    <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.B" id="B_@item.MaCauHoi" />
+                    if (item.DapAnChu.Contains("B"))
+                    {
+                        <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.B" id="B_@item.MaCauHoi" />
+                    }
                 }
                 else
                 {
@@ -83,9 +58,12 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                @if (item.DapAnChu.Contains("C"))
+                @if (!string.IsNullOrEmpty(item.DapAnChu))
                 {
-                    <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.C" id="C_@item.MaCauHoi" />
+                    if (item.DapAnChu.Contains("C"))
+                    {
+                        <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.C" id="C_@item.MaCauHoi" />
+                    }
                 }
                 else
                 {
@@ -94,9 +72,12 @@
                 <label for="C_@item.MaCauHoi"><strong style="padding-left:3px;">C/</strong> @item.C</label>
             </div>
             <div class="col-md-6">
-                @if (item.DapAnChu.Contains("D"))
+                @if (!string.IsNullOrEmpty(item.DapAnChu))
                 {
-                    <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.D" id="D_@item.MaCauHoi" />
+                    if (item.DapAnChu.Contains("D"))
+                    {
+                        <input type="radio" name="answer_@item.MaCauHoi" checked value="@item.D" id="D_@item.MaCauHoi" />
+                    }
                 }
                 else
                 {
@@ -114,15 +95,9 @@
 }
 
 <div class="row" style="text-align:center; margin-top:45px; margin-bottom:30px">
-    <a class="btn btn-info" href="@Url.Action("Index", "Home")">
+    <a class="btn btn-info" href="@Url.Action("BaiThi", "Home")">
         <i class="fa fa-play"></i>
-        Thoát
+        Danh Sách Bài Thi
     </a>
 
 </div>
-
-<script>
-
-</script>
-
-

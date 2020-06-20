@@ -133,9 +133,11 @@
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MonThiController.cs" />
     <Compile Include="Areas\Admin\Controllers\QuyenController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ThongKeController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Data\BaiThiModel.cs" />
     <Compile Include="Areas\Admin\Data\CauHoiModel.cs" />
+    <Compile Include="Areas\Admin\Data\DetailsBaiThiViewModel.cs" />
     <Compile Include="Areas\Admin\Data\DeThiModel.cs" />
     <Compile Include="Areas\Admin\Data\KetQuaBaiThiModel.cs" />
     <Compile Include="Areas\Admin\Data\LoaiCauHoiModel.cs" />
@@ -143,6 +145,7 @@
     <Compile Include="Areas\Admin\Data\QuyenModel.cs" />
     <Compile Include="Areas\Admin\Data\TaiKhoanModel.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Areas\Admin\Models\MaxDeThi.cs" />
     <Compile Include="Areas\Admin\Utils\BaiThiRepository.cs" />
     <Compile Include="Areas\Admin\Utils\CauHoiRepository.cs" />
     <Compile Include="Areas\Admin\Utils\DeThiRepository.cs" />
@@ -248,6 +251,7 @@
     <Content Include="Areas\Admin\Views\DeThi\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DeThi\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DeThi\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -280,6 +284,7 @@
     <Content Include="Views\Home\BatDau.cshtml" />
     <Content Include="Views\Home\NopBai.cshtml" />
     <Content Include="Views\Home\BaiThi.cshtml" />
+    <Content Include="Views\Home\ChiTietBaiThi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,7 +11,6 @@ using WebThiTracNghiem.Areas.Admin.Utils;
 namespace WebThiTracNghiem.Controllers
 {
     [Authorize]
-
     public class HomeController : BaseController
     {
         MonRepository _monThiRepo = new MonRepository();
@@ -108,6 +107,9 @@ namespace WebThiTracNghiem.Controllers
         public ActionResult NopBai(FormCollection form)
         {
             string maDe = form.Keys[0];
+            DateTime ThoiGianKetThuc = DateTime.Now;
+            DateTime ThoiGianBatDau = DateTime.Parse(form.Keys[2]);
+            TimeSpan ThoiGianLamBai;
             int diem = 0;
             int soCauDung = 0;
             List<CauHoiModel> ListCauHoi = new List<CauHoiModel>();
@@ -158,12 +160,20 @@ namespace WebThiTracNghiem.Controllers
                             diem++;
                         }
                         ListCauHoi.Where(m => m.MaCauHoi == maCauHoi[1]).FirstOrDefault().DapAnChu = dapAnChu[0];
-                        cauTraLoi += maCauHoi[1] + "_" + dapAnChu[1] + ",";
+                        string dapAnKoDau = dapAnChu[1].Replace(",", "*");
+                        cauTraLoi += maCauHoi[1] + "_" + dapAnKoDau + ",";
                     }
                 }
 
+                ThoiGianLamBai = ThoiGianKetThuc - ThoiGianBatDau;
+
                 kqBaiThi.MaDe = maDe;
-                kqBaiThi.ThoiGianLamBai = model.ThoiGianLamBai;
+                if (ThoiGianLamBai.TotalMinutes < 1)
+                    kqBaiThi.ThoiGianLamBai = 1;
+                else
+                {
+                    kqBaiThi.ThoiGianLamBai = int.Parse(ThoiGianLamBai.TotalMinutes.ToString());
+                }
                 kqBaiThi.SoCauDung = soCauDung;
                 kqBaiThi.Diem = diem;
                 kqBaiThi.TongSoCau = ListCauHoi.Count();
@@ -173,11 +183,12 @@ namespace WebThiTracNghiem.Controllers
                 UserSession session = (UserSession)HttpContext.Session["USER_SESSION"];
                 baiThi.TaiKhoan = session.UserName;
                 baiThi.MaDe = model.MaDe;
-                //baiThi.ThoiGianHoanThanh = 
+                baiThi.ThoiGianHoanThanh = Convert.ToInt32(Math.Round(ThoiGianLamBai.TotalMinutes, 0, MidpointRounding.AwayFromZero));
                 baiThi.SoCauDung = soCauDung.ToString();
                 baiThi.Diem = diem;
                 baiThi.CauTraLoi = cauTraLoi;
                 baiThi.NgayThi = DateTime.Now;
+                baiThi.TongSoCau = ListCauHoi.Count();
 
                 var createBaiThi = _baiThiRepo.CreateBaiThi(baiThi);
             }
@@ -221,6 +232,54 @@ namespace WebThiTracNghiem.Controllers
             }
 
             return View(BaiThi);
+        }
+
+        public ActionResult ChiTietBaiThi(string id)
+        {
+            var BaiThi = _baiThiRepo.GetBaiThiByID(id).Data.FirstOrDefault();
+            var DeThi = _deThiRepo.GetDeThiByID(BaiThi.MaDe).Data.FirstOrDefault();
+            DetailsBaiThiViewModel detailBaiThi = new DetailsBaiThiViewModel();
+            List<CauHoiModel> lstCauHoi = new List<CauHoiModel>();
+
+            detailBaiThi.DeThi = DeThi;
+            detailBaiThi.BaiThi = BaiThi;
+
+            if (!String.IsNullOrEmpty(DeThi.Cauhoi))
+            {
+
+                var DapAn = BaiThi.CauTraLoi.Split(',');
+
+                foreach (var item in DapAn)
+                {
+                    var UserAns = item.Split('_');
+                    if (!String.IsNullOrEmpty(UserAns[0]))
+                    {
+                        var cauHoi = _cauHoiRepo.GetCauHoiByID(UserAns[0]).Data.FirstOrDefault();
+                        string usrAnsChangeSymbol = UserAns[1].Replace("*", ",");
+                        if (cauHoi.A.Contains(usrAnsChangeSymbol))
+                        {
+                            cauHoi.DapAnChu = "A";
+                        }
+                        else if (cauHoi.B.Contains(usrAnsChangeSymbol))
+                        {
+                            cauHoi.DapAnChu = "B";
+                        }
+                        else if (cauHoi.C.Contains(usrAnsChangeSymbol))
+                        {
+                            cauHoi.DapAnChu = "C";
+                        }
+                        else if (cauHoi.D.Contains(usrAnsChangeSymbol))
+                        {
+                            cauHoi.DapAnChu = "D";
+                        }
+                        lstCauHoi.Add(cauHoi);
+                    }
+                }
+                detailBaiThi.CauHois = lstCauHoi;
+                detailBaiThi.BaiThi.Diem10 = Math.Round((double.Parse(detailBaiThi.BaiThi.SoCauDung)/lstCauHoi.Count)*10, 1, MidpointRounding.AwayFromZero);
+            }
+
+            return View(detailBaiThi);
         }
     }
 }

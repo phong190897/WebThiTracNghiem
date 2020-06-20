@@ -47,25 +47,25 @@
                                 <th>Mã Đề</th>
                                 <th>Điểm</th>
                                 <th>Số Câu Đúng</th>
-                                @*<th>Thời Gian Làm Bài</th>
-                                <th>Tổng Câu Hỏi</th>*@
+                                <th>Thời Gian Làm Bài</th>
+                                @*<th>Tổng Câu Hỏi</th>*@
                                 @*<th></th>*@
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr class="odd gradeX" id="row_@item.MaDe">
+                                <tr class="odd gradeX" id="row_@item.MaBaiThi">
                                     <td>@item.MaDe</td>
                                     <td>@item.Diem10</td>
                                     <td>@item.SoCauDung</td>
-                                    @*<td>@item.ThoiGianLamBai Phút</td>
-                                    <td>@item.TongCauHoi</td>*@
-                                    @*<td style="text-align:center">
-                                        <a class="btn btn-info  btn-outline  btn-sm edit-label" id="edit-@item.MaDe" href="@Url.Action("Details", "DeThi",new { id=item.MaDe})">
+                                    <td>@item.ThoiGianHoanThanh Phút</td>
+                                    @*<td>@item.TongCauHoi</td>*@
+                                    <td style="text-align:center">
+                                        <a class="btn btn-info  btn-outline  btn-sm edit-label" id="edit-@item.MaBaiThi" href="@Url.Action("ChiTietBaiThi", "Home",new { id=item.MaBaiThi})">
                                             Detail
                                         </a>
-                                    </td>*@
+                                    </td>
                                 </tr>
                             }
                         </tbody>
