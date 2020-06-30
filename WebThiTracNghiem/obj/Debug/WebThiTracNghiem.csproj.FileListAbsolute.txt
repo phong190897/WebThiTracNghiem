@@ -154,4 +154,3 @@ D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTrac
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.dll
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.pdb
 D:\Phong\WebThiTracNghiem\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csprojAssemblyReference.cache
-D:\Phong\NTT\ĐACN\WebThiTracNghiem\WebThiTracNghiem\obj\Debug\WebThiTracNghiem.csprojAssemblyReference.cache
